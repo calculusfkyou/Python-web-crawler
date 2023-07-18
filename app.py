@@ -8,7 +8,7 @@ from flask import Flask, request, abort, render_template
 
 
 from news import *
-from moneyNews import *
+from cs import *
 from music import *
 
 
@@ -44,13 +44,13 @@ def handle_message(event):
     # reply_token 只能用一次，用完一次就丟
     if "新聞" in message:
         result = news_crawler()
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=a))
-    elif "" in message:
-        result = _crawler()
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=b))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result))
+    elif "資工人" in message:
+        result = cs_crawler()
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result))
     elif "音樂" in message:
         result = music_crawler()
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=c))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=result))
     else:
         line_bot_api.reply_message(
             event.reply_token, TextSendMessage(text=message))
