@@ -57,7 +57,7 @@ for tr in tr_list:
         "stockName": stock_name_val,
         "stockIndustry": stock_industry_val
     })
-# print(result)
+    # print(result)
 
 # 將 dict 輸出成檔案
 stock_list_dict = {TITLE: result}
