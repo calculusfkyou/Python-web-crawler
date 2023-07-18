@@ -19,7 +19,7 @@ res = requests.get(url, params={
     "Page": "1",
     "chklike": "Y"
 })
-
+# print(res.encoding)
 # 處理編碼，使用預設 utf-8 的話 res.text 的內容會有亂碼
 res.encoding = "MS950"
 res_html = res.text
