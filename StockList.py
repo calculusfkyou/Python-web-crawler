@@ -44,7 +44,7 @@ for tr in tr_list:
 
     # 股票代碼
     stock_no_val = td_list[STOCK_NO_INDEX].text
-
+    
     # 股票名稱
     stock_name_val = td_list[STOCK_NAME_INDEX].text
 
